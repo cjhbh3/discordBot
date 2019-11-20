@@ -28,4 +28,4 @@ async def on_member_join(member):
     )
 
 
-client.run('NjQ2NDgzNjM2Njk0MTU1Mjc1.XdWIXg.W3RAq0dXv6ORC0-sFgSJcJURpls')
+client.run('NjQ2NDgzNjM2Njk0MTU1Mjc1.XdXNYQ.uNVxQS7B2dqVvnOAxCxfoEoVRNo')
