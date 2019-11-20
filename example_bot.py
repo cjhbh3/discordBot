@@ -8,10 +8,20 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('hello') or message.content.startswith('Hello'):
-        await message.channel.send('Hello!')
+    if message.author == client.user:
+        return 
+    elif message.content.startswith('hello') or message.content.startswith('Hello'):
+        return message.channel.send('Hello!')
     elif message.content.startswith('Yikes'):
-        await message.channel.send('Big yikes!')
+        return message.channel.send('Big yikes!')
 
-# Bot token: 'NjQ2NDgzNjM2Njk0MTU1Mjc1.XdSEjw.PYhHRZ6nfgDgwa2t9IF388qw_jI'
-client.run('NjQ2NDgzNjM2Njk0MTU1Mjc1.XdSEjw.PYhHRZ6nfgDgwa2t9IF388qw_jI')
+@client.event
+async def on_member_join(member):
+    await member.create_dm()
+    await member.dm_channel.send(
+        f'Hi {member.name}, welcome to my Discord server!'
+    )
+
+
+# Bot token: 'NjQ2NDgzNjM2Njk0MTU1Mjc1.XdSMhg.yNw872CawvNs6vr5IblYAFIxhCI'
+client.run('NjQ2NDgzNjM2Njk0MTU1Mjc1.XdSMhg.yNw872CawvNs6vr5IblYAFIxhCI')
