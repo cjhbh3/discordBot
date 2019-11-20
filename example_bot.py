@@ -8,8 +8,10 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('$hello'):
+    if message.content.startswith('hello') or message.content.startswith('Hello'):
         await message.channel.send('Hello!')
+    elif message.content.startswith('Yikes'):
+        await message.channel.send('Big yikes!')
 
-# Bot token: 'NjQ2NDgzNjM2Njk0MTU1Mjc1.XdRy3w.chmFA1d9ueEAQwDCcFkkcCtXdVU'
-client.run('NjQ2NDgzNjM2Njk0MTU1Mjc1.XdRy3w.chmFA1d9ueEAQwDCcFkkcCtXdVU')
+# Bot token: 'NjQ2NDgzNjM2Njk0MTU1Mjc1.XdSEjw.PYhHRZ6nfgDgwa2t9IF388qw_jI'
+client.run('NjQ2NDgzNjM2Njk0MTU1Mjc1.XdSEjw.PYhHRZ6nfgDgwa2t9IF388qw_jI')
