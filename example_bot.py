@@ -5,15 +5,20 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
+    test_ch = client.get_channel(646771900617457705)
+    if (test_ch != None):
+        await test_ch.send("Bot started!")
 
 @client.event
 async def on_message(message):
-    if message.author == client.user:
-        return 
-    elif message.content.startswith('hello') or message.content.startswith('Hello'):
-        return message.channel.send('Hello!')
+    if message.author.bot:
+        return
+    elif message.content.startswith('Hello'):
+        await message.channel.send('Hello!')
+    elif message.content.startswith('hello'):
+        await message.channel.send('Hello!')
     elif message.content.startswith('Yikes'):
-        return message.channel.send('Big yikes!')
+        await message.channel.send('Big yikes!')
 
 @client.event
 async def on_member_join(member):
@@ -23,5 +28,4 @@ async def on_member_join(member):
     )
 
 
-# Bot token: 'NjQ2NDgzNjM2Njk0MTU1Mjc1.XdSMhg.yNw872CawvNs6vr5IblYAFIxhCI'
-client.run('NjQ2NDgzNjM2Njk0MTU1Mjc1.XdSMhg.yNw872CawvNs6vr5IblYAFIxhCI')
+client.run('NjQ2NDgzNjM2Njk0MTU1Mjc1.XdWIXg.W3RAq0dXv6ORC0-sFgSJcJURpls')
