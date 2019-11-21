@@ -19,6 +19,8 @@ async def on_message(message):
         await message.channel.send('Hello!')
     elif message.content.startswith('Yikes'):
         await message.channel.send('Big yikes!')
+    elif 'help' in message.content or 'Help' in message.content:
+        await message.channel.send('@everyone, someone needs help!')
 
 @client.event
 async def on_member_join(member):
