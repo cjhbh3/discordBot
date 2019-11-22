@@ -1,11 +1,11 @@
 import discord
 
 client = discord.Client()
+test_ch = client.get_channel(646771900617457705)
 
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
-    test_ch = client.get_channel(646771900617457705)
     if (test_ch != None):
         await test_ch.send("Bot started!")
 
@@ -26,6 +26,10 @@ async def on_member_join(member):
     await member.dm_channel.send(
         f'Hi {member.name}, welcome to my Discord server!'
     )
+
+@client.event
+async def on_member_remove(member):
+    await test_ch.send(f'Goodbye {member.name}, you will be missed.')
 
 
 client.run('NjQ2NDgzNjM2Njk0MTU1Mjc1.XdXNYQ.uNVxQS7B2dqVvnOAxCxfoEoVRNo')
