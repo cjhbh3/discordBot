@@ -32,4 +32,4 @@ async def on_member_remove(member):
     await test_ch.send(f'Goodbye {member.name}, you will be missed.')
 
 
-client.run('NjQ2NDgzNjM2Njk0MTU1Mjc1.XdXNYQ.uNVxQS7B2dqVvnOAxCxfoEoVRNo')
+client.run(#Bot token)
