@@ -1,7 +1,7 @@
 import discord
 
 client = discord.Client()
-test_ch = client.get_channel(646771900617457705)
+test_ch = client.get_channel(#Channel ID)
 
 @client.event
 async def on_ready():
